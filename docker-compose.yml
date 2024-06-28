@@ -1,0 +1,13 @@
+services:
+    db:
+        image: postgres:16.2-alpine3.19
+        container_name: database
+        restart: always
+        volumes:
+            - ./db/data:/var/lib/postgresql/data
+        environment:
+            POSTGRES_DB: shop
+            POSTGRES_USER: user
+            POSTGRES_PASSWORD: password
+        ports:
+            - "5432:5432"
